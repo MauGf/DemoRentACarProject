@@ -1,0 +1,59 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated && User.IsInRole("Administrator"))
+{
+    using (Html.BeginForm("LogOff", "Auth", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Control Panel", "Index", "AppSettings", routeValues: new { area = "ControlPanel" }, htmlAttributes: new { @class = "navbar-button", title = "Manage" })
+        </li>
+        <li>
+            @Html.ActionLink("My Account", "Index", "Details", routeValues: new { area = "Account"}, htmlAttributes: new { @class = "navbar-button", title = "Manage" })
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()" class="navbar-button">Log off</a></li>
+    </ul>
+    }
+}
+else if (Request.IsAuthenticated && User.IsInRole("Moderator"))
+{
+    using (Html.BeginForm("LogOff", "Auth", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("My Desk", "Index", "Cars", routeValues: new { area = "MyDesk" }, htmlAttributes: new { @class = "navbar-button", title = "Manage" })
+            </li>
+            <li>
+                @Html.ActionLink("My Account", "Index", "Details", routeValues: new { area = "Account" }, htmlAttributes: new { @class = "navbar-button", title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()" class="navbar-button">Log off</a></li>
+        </ul>
+    }
+}
+else if (Request.IsAuthenticated && User.IsInRole("User"))
+{
+    using (Html.BeginForm("LogOff", "Auth", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("My Rents", "Index", "Rents", routeValues: new { area = "MyRents" }, htmlAttributes: new { @class = "navbar-button", title = "Manage" })
+            </li>
+            <li>
+                @Html.ActionLink("My Account", "Index", "Details", routeValues: new { area = "Account" }, htmlAttributes: new { @class = "navbar-button", title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()" class="navbar-button">Log off</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Auth", routeValues: new { area = "Account" }, htmlAttributes: new { @class = "navbar-button", id = "registerLink" })</li>
+        <li>@Html.ActionLink("Login", "Login", "Auth", routeValues: new { area = "Account" }, htmlAttributes: new { @class = "navbar-button", id = "loginLink" })</li>
+    </ul>
+}

@@ -1,0 +1,8 @@
+﻿<div class="list-group">
+    <div class="list-group-item menu-heading">My Desk</div>
+    @Html.ActionLink("Cars", "Index", "Cars", new { area = "MyDesk" }, new { @class = "list-group-item" })
+    <!--@Html.ActionLink("Offers", "Index", "Offers", new { area = "MyDesk" }, new { @class = "list-group-item" })-->
+    @Html.ActionLink("Reservations", "Index", "Reservations", new { area = "MyDesk" }, new { @class = "list-group-item" })
+    @Html.ActionLink("Rents", "Index", "Rents", new { area = "MyDesk" }, new { @class = "list-group-item" })
+    @Html.ActionLink("Bills", "Index", "Bills", new { area = "MyDesk" }, new { @class = "list-group-item" })
+</div>

@@ -1,0 +1,89 @@
+﻿@model RentACar.Areas.Account.Models.DetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="row">
+            <div class="col-md-3">
+                @{ Html.RenderPartial("_Menu"); }
+            </div>
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        @ViewBag.SubTitle
+                    </div>
+                    <div class="panel-body">
+                        <p class="text-success">@ViewBag.StatusMessage</p>
+
+                        @using (Html.BeginForm("Index", "Details", new { area = "Account" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.UserName, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @readonly = "readonly" })
+                                </div>
+                                @Html.LabelFor(m => m.Email, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @readonly = "readonly" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FirstName, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                                </div>
+                                @Html.LabelFor(m => m.LastName, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Age, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Address, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.City, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                                </div>
+                                @Html.LabelFor(m => m.Country, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-8">
+                                    <input type="reset" class="btn btn-default" value="Cancel" />
+                                    <input type="submit" class="btn btn-success" value="Change" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

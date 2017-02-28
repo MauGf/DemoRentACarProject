@@ -1,0 +1,204 @@
+﻿html, body {
+    font-family: 'Oxygen', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 35px 0 0 0;
+}
+
+.page-body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.navbar-style {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+ul.navbar-pages > li {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+ul.navbar-pages > li :hover, ul.navbar-pages > li :active  {
+    margin-top: -10px;
+    padding-top: 20px;
+    border-top: 5px solid grey;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.nav li a.navbar-button {
+    margin: 15px 5px 15px 5px;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 7.5px 12.5px 7.5px 12.5px;
+}
+
+.nav li a.navbar-button:hover, .nav li a.navbar-button:active {
+    border: 2px solid grey;
+}
+
+.navbar-toggle, .navbar-toggle-collapsed {
+    margin-top: 18px;
+}
+
+.navbar-brand {
+    margin-right: 10px;
+}
+
+.carousel, .item, .active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel {
+    margin-bottom: 55px;
+}
+
+.carousel-caption {
+    z-index: 10;
+}
+
+.carousel .item {
+    background-color: #777;
+}
+
+.carousel .carousel-inner .bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel .carousel-inner .bg1 {
+    background-image: url('../Images/Carousel/img-1.PNG');
+    background-position: center top;
+}
+
+.carousel .carousel-inner .bg2 {
+    background-image: url('../Images/Carousel/img-2.PNG');
+    background-position: center center;
+}
+
+.carousel .carousel-inner .bg3 {
+    background-image: url('../Images/Carousel/img-3.PNG');
+    background-position: center bottom;
+}
+
+.offers-style {
+    padding-bottom: 40px;
+}
+
+.offer {
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    background-color: lightgrey;
+    box-shadow: #aaa 0 0 15px;
+
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.offer-options {
+    border-style: none;
+    background-color: transparent;
+}
+
+.feedback-style {
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.brand-img {
+    height: 100px;
+    width: 100px;
+}
+
+.brands-style {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: dimgrey;
+}
+
+footer {
+    clear: both;
+    padding: 25px 0 25px 0;
+}
+
+.footer-image {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-copyright {
+    padding-top: 10px;
+}
+
+.register-form .form-horizontal.form-group, #loginForm .form-horizontal.form-group {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 300px;
+}
+
+#loginForm {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 60px auto 50px auto;
+
+    max-width: 400px;
+}
+
+.login-form-header {
+    margin: 0 auto 0 auto;
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+
+.login-form-body {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 25px 20px 25px;
+}
+
+.register-form {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 60px auto 50px auto;
+
+    max-width: 400px;
+}
+
+.register-form-header {
+    margin: 0 auto 0 auto;
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+
+.register-form-body {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 25px 20px 25px;
+}
+
+.menu-heading {
+    color: #333333;
+    background-color: #f5f5f5;
+    border-color: #dddddd;
+}
+
+.datepicker-dropdown {
+    margin-top: 36px;
+    margin-left: 0;
+}

@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "ConfirmEmail";
+}
+
+<div class="container">
+    <div class="page-body">
+        <h4>Confirm email</h4>
+        <p>
+            @ViewBag.Result
+        </p>
+
+        <p>
+            For going back to account details, click 
+            @Html.ActionLink(" here", "Index", "Details" , new { area = "Account" }, null)
+            .
+        </p>
+    </div>
+</div>
+
+

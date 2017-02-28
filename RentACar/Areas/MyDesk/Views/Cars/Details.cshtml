@@ -1,0 +1,96 @@
+﻿@model RentACar.Models.Car
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="col-md-3">
+            @{ Html.RenderPartial("_Menu"); }
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span>Car details</span>
+                    <span class="pull-right">
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.CarId }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </span>
+                </div>
+                <div class="panel-body">
+
+                    <img src="@Model.ImageUrl" class="img-responsive" alt="Car image"
+                         style="margin: 10px auto 20px auto; max-height: 200px; width: auto;" />
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Type.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Type.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Brand.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Brand.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Model)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Model)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ImageUrl)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ImageUrl)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CostPerDay)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CostPerDay)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NumberTotal)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NumberTotal)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NumberReserved)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NumberReserved)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NumberInUse)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NumberInUse)
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

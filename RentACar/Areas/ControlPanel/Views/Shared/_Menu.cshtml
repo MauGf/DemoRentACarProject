@@ -1,0 +1,6 @@
+﻿<div class="list-group">
+    <div class="list-group-item menu-heading">Control panel</div>
+    @Html.ActionLink("Application management", "Index", "AppSettings", new { area = "ControlPanel" }, new { @class = "list-group-item" })
+    @Html.ActionLink("User management", "Index", "Users", new { area = "ControlPanel" }, new { @class = "list-group-item" })
+    @Html.ActionLink("Role management", "Index", "Roles", new { area = "ControlPanel" }, new { @class = "list-group-item" })
+</div>

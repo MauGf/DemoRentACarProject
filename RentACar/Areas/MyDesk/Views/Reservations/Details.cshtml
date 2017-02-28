@@ -1,0 +1,63 @@
+﻿@model RentACar.Models.Reservation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="col-md-3">
+            @{ Html.RenderPartial("_Menu"); }
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span>Reservation details</span>
+                    <span class="pull-right">
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.ReservationId }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div>
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ReservationId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ReservationId)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Car.Model)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Car.Brand.Name)
+                                @Html.DisplayFor(model => model.Car.Model)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.User.Email)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.User.Email)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Date)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Date)
+                            </dd>
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

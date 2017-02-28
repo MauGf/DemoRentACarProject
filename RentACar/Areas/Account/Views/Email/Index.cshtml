@@ -1,0 +1,86 @@
+﻿@model RentACar.Areas.Account.Models.EmailViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="row">
+            <div class="col-md-3">
+                @{ Html.RenderPartial("_Menu"); }
+            </div>
+            <div class="col-md-9">
+                @if (ViewBag.StatusMessage.Length > 0)
+                {
+                    <div class="alert @ViewBag.StatusClass">
+                        @ViewBag.StatusMessage
+                    </div>
+                }
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Email details
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.EmailAddress, new { @class = "col-xs-12 col-sm-1 col-md-1 control-label" })
+                                        <div class="col-xs-12 col-sm-5 col-md-5">
+                                            @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", @readonly = "readonly" })
+                                        </div>
+                                        @Html.LabelFor(m => m.EmailConfirmed, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                            @Html.CheckBoxFor(m => m.EmailConfirmed, new { @readonly = "readonly" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Change email
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <p>
+                                    In this section you can change your email.
+                                </p>
+                                @Html.ActionLink("Change email", "ChangeEmail", "Email", new { area = "Account" }, new { @class = "btn btn-default" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Confirm email
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <p>
+                                    In this section you can resend activation mail.
+                                </p>
+                                @if (Model.EmailConfirmed == true)
+                                {
+                                    @Html.ActionLink("Resend activation email", "SendConfirmationEmail", "Email", new { area = "Account" }, new { @class = "btn btn-default", @disabled = "disabled" })
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Resend activation email", "SendConfirmationEmail", "Email", new { area = "Account" }, new { @class = "btn btn-default" })
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

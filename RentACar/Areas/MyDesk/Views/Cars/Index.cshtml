@@ -1,0 +1,93 @@
+﻿@model IEnumerable<RentACar.Models.Car>
+
+@{
+    ViewBag.Title = "Cars";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="col-md-3">
+            @{ Html.RenderPartial("_Menu"); }
+        </div>
+        <div class="col-md-9">
+            @if (ViewBag.StatusMessage.Length > 0)
+            {
+                <div class="alert @ViewBag.StatusClass">
+                    @ViewBag.StatusMessage
+                </div>
+            }
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span>Cars</span>
+                    <span class="pull-right">
+                        @Html.ActionLink("Create New", "Create")
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover table-striped">
+                        <tr>
+                            <th class="text-center">
+                                @Html.ActionLink("Brand", "Index", new { sortOrder = ViewBag.SortByName })
+                            </th>
+                            <th class="text-center">
+                                @Html.DisplayNameFor(model => model.Model)
+                            </th>
+                            <th class="text-center">
+                                @Html.DisplayNameFor(model => model.Type.Name)
+                            </th>
+                            <th class="text-center">
+                                @Html.DisplayNameFor(model => model.CostPerDay)
+                            </th>
+                            <th class="text-center">
+                                @Html.DisplayNameFor(model => model.NumberTotal)
+                            </th>
+                            <th class="text-center">
+                                @Html.DisplayNameFor(model => model.NumberReserved)
+                            </th>
+                            <th class="text-center">
+                                @Html.DisplayNameFor(model => model.NumberInUse)
+                            </th>
+                            <th class="text-center">
+                                Actions
+                            </th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr class="text-center">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Brand.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Model)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Type.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CostPerDay)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumberTotal)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumberReserved)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumberInUse)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CarId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.CarId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CarId })
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

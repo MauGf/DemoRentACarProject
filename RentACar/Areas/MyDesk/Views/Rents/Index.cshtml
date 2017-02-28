@@ -1,0 +1,111 @@
+﻿@model IEnumerable<RentACar.Models.Rent>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="col-md-3">
+            @{ Html.RenderPartial("_Menu"); }
+        </div>
+        <div class="col-md-9">
+            @if (ViewBag.StatusMessage.Length > 0)
+            {
+                <div class="alert @ViewBag.StatusClass">
+                    @ViewBag.StatusMessage
+                </div>
+            }
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span>Rents</span>
+                    <span class="pull-right">
+                        @Html.ActionLink("Create New", "Create")
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped text-center">
+                        <tr>
+                            <th class="text-center">
+                                @Html.ActionLink("Rent ID", "Index", new { sortOrder = ViewBag.SortById })
+                            </th>
+                            <th class="text-center">
+                                User
+                            </th>
+                            <th class="text-center">
+                                @Html.DisplayNameFor(model => model.Car.Model)
+                            </th>
+                            <th class="text-center">
+                                @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.SortByDate })
+                            </th>
+                            <th class="text-center">
+                                @Html.DisplayNameFor(model => model.EndDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Billed)
+                            </th>
+                            <th class="text-center">
+                                @Html.DisplayNameFor(model => model.Paid)
+                            </th>
+                            <th class="text-center">
+                                Actions
+                            </th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr class="text-center">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RentId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.UserDetails.FirstName)
+                                    @Html.DisplayFor(modelItem => item.User.UserDetails.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Car.Brand.Name)
+                                    @Html.DisplayFor(modelItem => item.Car.Model)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StartDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EndDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Billed)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Paid)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.RentId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.RentId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.RentId }) |
+                                    @if (item.Billed == true)
+                                    {
+                                        @Html.DisplayName("Bill")
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Bill", "Create", "Bills", new { id = item.RentId }, null)
+                                    }
+                                    |
+                                    @if (item.Returned == true)
+                                    {
+                                        @Html.DisplayName("Return")
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Return", "ReturnCar", new { id = item.RentId })
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

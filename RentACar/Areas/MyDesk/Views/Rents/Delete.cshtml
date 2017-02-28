@@ -1,0 +1,88 @@
+﻿@model RentACar.Models.Rent
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="col-md-3">
+            @{ Html.RenderPartial("_Menu"); }
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span>Cars</span>
+                    <span class="pull-right">
+                        @Html.ActionLink("Back to List", "Index")
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h3>Are you sure you want to delete this?</h3>
+                    <div>
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.RentId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Bill.RentId)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Car.Model)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Car.Brand.Name)
+                                @Html.DisplayFor(model => model.Car.Model)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.User.Email)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.User.Email)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.StartDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.StartDate)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.EndDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.EndDate)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Paid)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Paid)
+                            </dd>
+
+                        </dl>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Delete" class="btn btn-danger" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

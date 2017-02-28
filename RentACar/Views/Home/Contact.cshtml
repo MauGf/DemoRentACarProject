@@ -1,0 +1,99 @@
+﻿@model RentACar.Models.Contact
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="row">
+            <div class="col-md-5">
+                <h4>Contact form</h4>
+                <p class="text-center">
+                        <br />
+                        @Html.Raw(ViewBag.Message)
+                </p>
+                <br />
+                @using (Html.BeginForm("Contact", "Home", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Website, new { @class = "form-control", placeholder = "Website (optional)" })
+                        @Html.ValidationMessageFor(m => m.Website, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", placeholder = "Subject" })
+                        @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" name="message" class="form-control" rows="7" placeholder="Message..." required="required"></textarea>
+                        @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Send email" class="btn btn-block" />
+                    </div>
+                }
+            </div>
+            <div class="col-md-offset-2 col-md-5">
+                <h4>Contact information</h4>
+                <address>
+                    <p>
+                        <strong>Phone:</strong> +503 01 234 567
+                    </p>
+                    <p>
+                        <strong>Email:</strong> <a href="maugarciaflores@gmail.com">maugarciaflores@gmail.com</a>
+                    </p>
+                    <p>
+                        <strong>Business hours:</strong> 08:00 - 17:00
+                    </p>
+                    <p>
+                        <strong>Location:</strong> Urbanizacion La Cima II
+                    </p>
+                </address>
+                <div id="map" style="width:100%; height:360px; border-radius: 5px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+    var address = new google.maps.LatLng(13.6656025, -89.2209149, 18);
+
+    function initialize() {
+        var mapProperties = {
+            center: address,
+            zoom: 10,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("map"), mapProperties);
+
+        var marker = new google.maps.Marker({
+            position: address,
+        });
+
+        marker.setMap(map);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,158 @@
+﻿@model RentACar.Areas.ControlPanel.Models.UserDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="col-md-3">
+            @{ Html.RenderPartial("_Menu"); }
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span>Account info</span>
+                    <span class="pull-right">
+                        @Html.ActionLink("Edit", "Edit", "Users", new { area = "ControlPanel", Id = Model.UserId }, null) |
+                        @Html.ActionLink("Back to List", "Index", "Users", new { area = "ControlPanel" }, null)
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="col-xs-12">
+                            <h4>Account details</h4>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.UserId, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.UserId)
+                                        </p>
+                                    </div>
+                                    @Html.LabelFor(m => m.Role, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.Role)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.UserName, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.UserName)
+                                        </p>
+                                    </div>
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.Password)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.EmailAddress, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.EmailAddress)
+                                        </p>
+                                    </div>
+                                    @Html.LabelFor(m => m.EmailAddressConfirmed, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.CheckBoxFor(m => m.EmailAddressConfirmed, new { @disabled = "disabled" })
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <h4>User details</h4>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.FirstName, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.FirstName)
+                                        </p>
+                                    </div>
+                                    @Html.LabelFor(m => m.LastName, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+
+                                        </p>
+                                        @Html.DisplayFor(m => m.LastName)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Age, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.Age)
+                                        </p>
+                                    </div>
+                                    @Html.LabelFor(m => m.Country, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.Country)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Address, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.Address)
+                                        </p>
+                                    </div>
+                                    @Html.LabelFor(m => m.City, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.City, new { @class = "form-control-static" })
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <h4>Account stats</h4>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.AccessFailedCount, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.AccessFailedCount)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.LockoutEnabled, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.CheckBoxFor(m => m.LockoutEnabled, new { @disabled = "disabled" })
+                                        </p>
+                                    </div>
+                                    @Html.LabelFor(m => m.LockoutEndDate, new { @class = "col-xs-12 col-sm-2 col-md-2 control-label" })
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <p class="form-control-static">
+                                            @Html.DisplayFor(m => m.LockoutEndDate)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

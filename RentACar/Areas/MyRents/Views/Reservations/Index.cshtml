@@ -1,0 +1,71 @@
+﻿@model IEnumerable<RentACar.Models.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="page-body">
+        <div class="col-md-3">
+            @{ Html.RenderPartial("_Menu"); }
+        </div>
+        <div class="col-md-9">
+            @if (ViewBag.StatusMessage.Length > 0)
+            {
+                <div class="alert @ViewBag.StatusClass">
+                    @ViewBag.StatusMessage
+                </div>
+            }
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span>Reservations</span>
+                    <span class="pull-right">
+                        @Html.ActionLink("Create New", "Create")
+                    </span>
+                </div>
+                <div class="panel-body">
+                    @if (Model.Count() > 0)
+                    {
+                        <table class="table table-striped text-center">
+                            <tr>
+                                <th class="text-center">
+                                    @Html.DisplayNameFor(model => model.Car.Model)
+                                </th>
+                                <th class="text-center">
+                                    @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.SortByDate })
+                                </th>
+                                <th class="text-center">
+                                    Actions
+                                </th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr class="text-center">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Car.Brand.Name)
+                                        @Html.DisplayFor(modelItem => item.Car.Model)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Date)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.ReservationId }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.ReservationId })
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <p class="text-center">
+                            No reservations yet.
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

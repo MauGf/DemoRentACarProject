@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<!-- Jumbotron with Carousel-->
+<div id="carousel-cars" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item bg bg1 active">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h4>Consigue lo mejor para ti!</h4>
+                    <p>Haga clic abajo para ver nuestra oferta.</p>
+                    @Html.ActionLink("Car list", "CarList", null, new { @class = "btn btn-primary" })
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="item bg bg2">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h4>Regístrate ahora!</h4>
+                    <p>Consiga su coche en dos pasos!</p>
+                    @Html.ActionLink("Register", "Register", "Auth", new { area = "Account" }, new { @class = "btn btn-primary" })
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="item bg bg3">
+            <div class="carousel-caption">
+                <h4>Descubre el poder!</h4>
+                <p>Nuestros coches son uno de los mejores del mercado...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-cars" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-cars" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+    </a>
+</div>
+
+<!-- Offers -->
+<div class="offers-style">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-12 col-md-4">
+                <div class="offer">
+                    <!--<img src="" alt="" />-->
+                    <div class="caption">
+                        <h4><strong>Option list 1</strong></h4>
+                        <p>
+                            <ul class="list-group">
+                                <li class="list-group-item offer-options">Option 1</li>
+                                <li class="list-group-item offer-options">Option 2</li>
+                                <li class="list-group-item offer-options">Option 3</li>
+                                <li class="list-group-item offer-options">Option 4</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="offer">
+                    <div class="caption">
+                        <h4><strong>Option list 2</strong></h4>
+                        <p>
+                            <ul class="list-group">
+                                <li class="list-group-item offer-options">Option 1</li>
+                                <li class="list-group-item offer-options">Option 2</li>
+                                <li class="list-group-item offer-options">Option 3</li>
+                                <li class="list-group-item offer-options">Option 4</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="offer">
+                    <div class="caption">
+                        <h4><strong>Option list 3</strong></h4>
+                        <p>
+                            <ul class="list-group">
+                                <li class="list-group-item offer-options">Option 1</li>
+                                <li class="list-group-item offer-options">Option 2</li>
+                                <li class="list-group-item offer-options">Option 3</li>
+                                <li class="list-group-item offer-options">Option 4</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Brands -->
+<div class="brands-style">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <img src="~/Images/Brands/bmw-logo.png" class="brand-img" />
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <img src="~/Images/Brands/honda-logo.png" class="brand-img" />
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <img src="~/Images/Brands/hyundai-logo.png" class="brand-img" />
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <img src="~/Images/Brands/mercedes-logo.png" class="brand-img" />
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <img src="~/Images/Brands/nissan-logo.png" class="brand-img" />
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <img src="~/Images/Brands/toyota-logo.png" class="brand-img" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- User's feedback -->
+<div class="feedback-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <blockquote>
+                    <p>
+                        Bolado Quare Uñudo attende, Jarana quaeso. 
+                        Cuña At Lombriciento coluit Jumba ipse Cojonudo amicitias.
+                         Mono Sed Bichada quot Chindondo homines, 
+                        Empacho tot Cuica sententiae; Agilamiento Duo Cabieron Reges:
+                         Aguambado constructio Engatusar interrete.
+                    </p>
+
+                    <p><small>Ivica, USA</small></p>
+                </blockquote>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <blockquote>
+                    <p>
+                        Bolado Quare Uñudo attende, Jarana quaeso.
+                        Cuña At Lombriciento coluit Jumba ipse Cojonudo amicitias.
+                        Mono Sed Bichada quot Chindondo homines,
+                        Empacho tot Cuica sententiae; Agilamiento Duo Cabieron Reges:
+                        Aguambado constructio Engatusar interrete.
+                    </p>
+                    <p><small>John, San Salvador</small></p>
+                </blockquote>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <blockquote>
+                    <p>
+                        Bolado Quare Uñudo attende, Jarana quaeso.
+                        Cuña At Lombriciento coluit Jumba ipse Cojonudo amicitias.
+                        Mono Sed Bichada quot Chindondo homines,
+                        Empacho tot Cuica sententiae; Agilamiento Duo Cabieron Reges:
+                        Aguambado constructio Engatusar interrete.
+                    </p>
+                    <p><small>Antonio, Santa Ana</small></p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
